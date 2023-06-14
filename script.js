@@ -67,9 +67,9 @@ function game() {
 
     if (playerPoints + computerPoints === 5) {
       if (playerPoints > computerPoints) {
-        console.log("You win! Congratulations, you beat the mighty computer!");
+        alert("You win! Congratulations, you beat the mighty computer!");
       } else {
-        console.log("Computer wins! Better luck next time!");
+        alert("Computer wins! Better luck next time!");
       }
     }
   }
