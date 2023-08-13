@@ -1,21 +1,26 @@
 console.log("Hello there. Shall we play?");
-console.log("There are 5 rounds. One that gets more points, WINS!");
+console.log("There are 5 rounds. The player that gets more points, WINS!");
 console.log("Click the button of the page if you're ready");
 
 const button = document.getElementById("startGameButton");
 
 function game() {
+  const gameChoices = ["paper", "rock", "scissors"];
+
   for (let round = 1, playerPoints = 0, computerPoints = 0; round <= 5; ) {
     console.log(`ROUND ${round}`);
 
-    const gameChoices = ["paper", "rock", "scissors"];
     let computerSelection =
       gameChoices[Math.floor(Math.random() * gameChoices.length)];
-
+    let computerSelectionCapitalised =
+      computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
     let playerProvidedChoice = prompt(
       "What's your move? Paper, rock or scissors?"
     );
     let playerSelection = playerProvidedChoice.toLowerCase();
+    let playerSelectionCapitalised =
+      playerProvidedChoice.charAt(0).toUpperCase() +
+      playerProvidedChoice.slice(1).toLowerCase();
 
     let getPlayerChoice = function () {
       return `Player's choice is: ${playerSelection}`;
@@ -48,7 +53,7 @@ function game() {
     ) {
       ++playerPoints;
       console.log(
-        `${playerSelection} beats ${computerSelection}! Player gets a point!!!`
+        `${playerSelectionCapitalised} beats ${computerSelection}! Player gets a point!!!`
       );
       console.log(
         `Result: Player's points: ${playerPoints} \| Computer's points: ${computerPoints}`
@@ -57,7 +62,7 @@ function game() {
     } else {
       ++computerPoints;
       console.log(
-        `${computerSelection} beats ${playerSelection}! Computer gets a point!!!`
+        `${computerSelectionCapitalised} beats ${playerSelection}! Computer gets a point!!!`
       );
       console.log(
         `Result: Player's points: ${playerPoints} \| Computer's points: ${computerPoints}`
