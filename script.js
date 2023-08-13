@@ -14,6 +14,7 @@ function game() {
       gameChoices[Math.floor(Math.random() * gameChoices.length)];
     let computerSelectionCapitalised =
       computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+
     let playerProvidedChoice = prompt(
       "What's your move? Paper, rock or scissors?"
     );
